@@ -1,0 +1,45 @@
+# ============================================================
+# usuario-service — BookPoint Chile
+# ============================================================
+spring:
+  application:
+    name: usuario-service
+  profiles:
+    active: dev
+
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    path: /doc/swagger-ui.html
+
+---
+# ── Perfil: dev (desarrollo local con XAMPP/MySQL) ─────────────────────────
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/usuarios_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+# ── Perfil: prod (despliegue / servidor real) ───────────────────────────────
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/usuarios_db?useSSL=false&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
