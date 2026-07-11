@@ -8,27 +8,27 @@ import com.bookpoint.pedido.model.Pedido;
 public class PedidoDTO {
     private Long id;
 
-    @NotNull(message = "El usuarioId es obligatorio")
+    @NotNull(message = "El usuarioId no puede ser nulo ni vacio")
     @Positive(message = "El usuarioId debe ser mayor a cero")
     private Long usuarioId;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
     @Min(value = 1, message = "La cantidad minima es 1")
     private int cantidad;
 
-    @NotBlank(message = "El estado es obligatorio")
+    @NotBlank(message = "El estado no puede ser nulo ni vacio")
     @Pattern(regexp = "PENDIENTE|ENVIADO|ENTREGADO|CANCELADO",
              message = "Estado invalido. Use: PENDIENTE, ENVIADO, ENTREGADO o CANCELADO")
     private String estado;
 
-    @NotNull(message = "La fecha del pedido es obligatoria")
+    @NotNull(message = "La fecha del pedido no puede ser nula ni vacia")
     @PastOrPresent(message = "La fecha no puede ser futura")
     private LocalDate fechaPedido;
 
-    @NotBlank(message = "La direccion de entrega es obligatoria")
+    @NotBlank(message = "La direccion de entrega no puede ser nula ni vacia")
     private String direccionEntrega;
 
     /** Informacion enriquecida opcional — no se persiste, solo se completa al responder */

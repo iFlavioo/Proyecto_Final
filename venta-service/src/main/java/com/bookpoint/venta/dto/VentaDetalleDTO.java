@@ -9,11 +9,11 @@ import com.bookpoint.venta.model.VentaDetalle;
 public class VentaDetalleDTO {
     private Long id;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
-    @NotNull(message = "La cantidad es obligatoria")
+    @NotNull(message = "La cantidad no puede ser nula ni vacia")
     @Min(value = 1, message = "La cantidad minima es 1")
     private Integer cantidad;
 

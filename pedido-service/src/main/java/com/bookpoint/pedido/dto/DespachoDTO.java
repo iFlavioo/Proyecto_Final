@@ -20,17 +20,20 @@ public class DespachoDTO {
 
     private Long id;
 
-    @NotNull(message = "El pedidoId es obligatorio")
+    @NotNull(message = "El pedidoId no puede ser nulo ni vacio")
     @Positive(message = "El pedidoId debe ser mayor a cero")
     private Long pedidoId;
 
-    @NotNull(message = "El sucursalId es obligatorio")
+    @NotNull(message = "El sucursalId no puede ser nulo ni vacio")
     @Positive(message = "El sucursalId debe ser mayor a cero")
     private Long sucursalId;
 
-    @NotBlank(message = "El estado es obligatorio")
+    @NotBlank(message = "El estado no puede ser nulo ni vacio")
     private String estado;
 
+    @NotNull(message = "La fecha de despacho no puede ser nula ni vacia")
     private LocalDate fechaDespacho;
+
+    @NotBlank(message = "La direccion de destino no puede ser nula ni vacia")
     private String direccionDestino;
 }

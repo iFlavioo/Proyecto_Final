@@ -8,15 +8,15 @@ import com.bookpoint.resena.model.Resena;
 public class ResenaDTO {
     private Long id;
 
-    @NotNull(message = "El usuarioId es obligatorio")
+    @NotNull(message = "El usuarioId no puede ser nulo ni vacio")
     @Positive(message = "El usuarioId debe ser mayor a cero")
     private Long usuarioId;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
-    @NotBlank(message = "El comentario es obligatorio")
+    @NotBlank(message = "El comentario no puede ser nulo ni vacio")
     @Size(min = 5, max = 500, message = "El comentario debe tener entre 5 y 500 caracteres")
     private String comentario;
 
@@ -24,7 +24,7 @@ public class ResenaDTO {
     @Max(value = 5, message = "La calificacion maxima es 5")
     private int calificacion;
 
-    @NotNull(message = "La fecha de resena es obligatoria")
+    @NotNull(message = "La fecha de resena no puede ser nula ni vacia")
     @PastOrPresent(message = "La fecha no puede ser futura")
     private LocalDate fechaResena;
 

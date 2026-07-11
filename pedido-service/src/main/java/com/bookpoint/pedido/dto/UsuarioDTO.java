@@ -17,12 +17,13 @@ public class UsuarioDTO {
 
     private Long id;
 
-    @NotBlank(message = "El nombre del usuario es obligatorio")
+    @NotBlank(message = "El nombre del usuario no puede ser nulo ni vacio")
     private String nombre;
 
-    @NotBlank(message = "El email es obligatorio")
+    @NotBlank(message = "El email no puede ser nulo ni vacio")
     @Email(message = "El email no tiene un formato valido")
     private String email;
 
+    @NotBlank(message = "El rol no puede ser nulo ni vacio")
     private String rol;
 }

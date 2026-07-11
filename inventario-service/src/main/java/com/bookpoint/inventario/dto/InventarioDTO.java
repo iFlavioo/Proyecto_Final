@@ -7,11 +7,11 @@ import com.bookpoint.inventario.model.Inventario;
 public class InventarioDTO {
     private Long id;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
-    @NotNull(message = "El sucursalId es obligatorio")
+    @NotNull(message = "El sucursalId no puede ser nulo ni vacio")
     @Positive(message = "El sucursalId debe ser mayor a cero")
     private Long sucursalId;
 

@@ -53,7 +53,7 @@ public class InventarioController {
 
     @PutMapping("/descontar")
     @Operation(summary = "Descontar stock al vender (llamado por venta-service)")
-    public ResponseEntity<Void> descontarStock(@RequestBody DescontarStockDTO dto) {
+    public ResponseEntity<Void> descontarStock(@Valid @RequestBody DescontarStockDTO dto) {
         try {
             inventarioService.descontarStock(dto.getProductoId(), dto.getSucursalId(), dto.getCantidad());
             return ResponseEntity.ok().build();

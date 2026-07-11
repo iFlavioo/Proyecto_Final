@@ -2,7 +2,6 @@ package com.bookpoint.venta.dto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 import java.time.LocalDate;
@@ -16,16 +15,15 @@ import com.bookpoint.venta.model.VentaDetalle;
 public class VentaDTO {
     private Long id;
 
-    @NotNull(message = "El usuarioId es obligatorio")
+    @NotNull(message = "El usuarioId no puede ser nulo ni vacio")
     @Positive(message = "El usuarioId debe ser mayor a cero")
     private Long usuarioId;
 
-    @NotNull(message = "El sucursalId es obligatorio")
+    @NotNull(message = "El sucursalId no puede ser nulo ni vacio")
     @Positive(message = "El sucursalId debe ser mayor a cero")
     private Long sucursalId;
 
-    @NotNull(message = "La fecha de venta es obligatoria")
-    @PastOrPresent(message = "La fecha no puede ser futura")
+    /** Se asigna automaticamente en el servidor con la fecha actual; solo lectura para el cliente. */
     private LocalDate fechaVenta;
 
     /** Calculado automaticamente por el servidor a partir de los detalles */

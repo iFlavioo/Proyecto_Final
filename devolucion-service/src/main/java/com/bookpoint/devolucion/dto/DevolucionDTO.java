@@ -8,24 +8,24 @@ import com.bookpoint.devolucion.model.Devolucion;
 public class DevolucionDTO {
     private Long id;
 
-    @NotNull(message = "El usuarioId es obligatorio")
+    @NotNull(message = "El usuarioId no puede ser nulo ni vacio")
     @Positive(message = "El usuarioId debe ser mayor a cero")
     private Long usuarioId;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
-    @NotBlank(message = "El motivo es obligatorio")
+    @NotBlank(message = "El motivo no puede ser nulo ni vacio")
     @Size(min = 5, max = 300, message = "El motivo debe tener entre 5 y 300 caracteres")
     private String motivo;
 
-    @NotBlank(message = "El estado es obligatorio")
+    @NotBlank(message = "El estado no puede ser nulo ni vacio")
     @Pattern(regexp = "PENDIENTE|APROBADA|RECHAZADA",
              message = "Estado invalido. Use: PENDIENTE, APROBADA o RECHAZADA")
     private String estado;
 
-    @NotNull(message = "La fecha de devolucion es obligatoria")
+    @NotNull(message = "La fecha de devolucion no puede ser nula ni vacia")
     @PastOrPresent(message = "La fecha no puede ser futura")
     private LocalDate fechaDevolucion;
 

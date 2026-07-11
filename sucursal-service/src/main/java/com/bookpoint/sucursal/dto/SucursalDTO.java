@@ -7,16 +7,19 @@ import com.bookpoint.sucursal.model.Sucursal;
 public class SucursalDTO {
     private Long id;
 
-    @NotBlank(message = "El nombre de la sucursal es obligatorio")
+    @NotBlank(message = "El nombre de la sucursal no puede ser nulo ni vacio")
     private String nombre;
 
-    @NotBlank(message = "La direccion es obligatoria")
+    @NotBlank(message = "La direccion no puede ser nula ni vacia")
     private String direccion;
 
-    @NotBlank(message = "La ciudad es obligatoria")
+    @NotBlank(message = "La ciudad no puede ser nula ni vacia")
     private String ciudad;
 
+    @NotBlank(message = "El telefono no puede ser nulo ni vacio")
     private String telefono;
+
+    @NotBlank(message = "El horario no puede ser nulo ni vacio")
     private String horario;
 
     public static SucursalDTO fromEntity(Sucursal s) {

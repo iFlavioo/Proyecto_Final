@@ -73,6 +73,10 @@ public class VentaService {
             throw new RuntimeException("La venta debe tener al menos un producto");
         }
 
+        // La fecha de la venta se asigna automaticamente con la fecha actual del servidor,
+        // ignorando cualquier valor enviado por el cliente.
+        venta.setFechaVenta(java.time.LocalDate.now());
+
         // 3) Para cada producto: validar que exista y obtener su precio REAL (no confiar en el cliente)
         double total = 0.0;
         for (VentaDetalle d : venta.getDetalles()) {
@@ -135,7 +139,7 @@ public class VentaService {
             .orElseThrow(() -> new RuntimeException("No existe venta con id: " + id));
         existente.setUsuarioId(venta.getUsuarioId());
         existente.setSucursalId(venta.getSucursalId());
-        existente.setFechaVenta(venta.getFechaVenta());
+        // La fecha de venta original se conserva; se asigna automaticamente al crear y no se modifica.
         return ventaRepository.save(existente);
     }
 

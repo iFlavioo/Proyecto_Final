@@ -8,6 +8,7 @@ spring:
       enabled: false
     gateway:
       routes:
+        # ─── Rutas de negocio ────────────────────────────────────────────────
         - id: usuario-service
           uri: http://localhost:8081
           predicates: [Path=/api/v1/usuarios/**]
@@ -47,3 +48,93 @@ spring:
         - id: notificacion-service
           uri: http://localhost:8093
           predicates: [Path=/api/v1/notificaciones/**]
+        # ─── Rutas de documentacion (OpenAPI de cada servicio via gateway) ───
+        - id: usuario-service-docs
+          uri: http://localhost:8081
+          predicates: [Path=/usuario-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: resena-service-docs
+          uri: http://localhost:8082
+          predicates: [Path=/resena-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: devolucion-service-docs
+          uri: http://localhost:8083
+          predicates: [Path=/devolucion-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: producto-service-docs
+          uri: http://localhost:8084
+          predicates: [Path=/producto-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: inventario-service-docs
+          uri: http://localhost:8085
+          predicates: [Path=/inventario-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: venta-service-docs
+          uri: http://localhost:8086
+          predicates: [Path=/venta-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: pedido-service-docs
+          uri: http://localhost:8087
+          predicates: [Path=/pedido-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: despacho-service-docs
+          uri: http://localhost:8088
+          predicates: [Path=/despacho-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: sucursal-service-docs
+          uri: http://localhost:8089
+          predicates: [Path=/sucursal-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: proveedor-service-docs
+          uri: http://localhost:8090
+          predicates: [Path=/proveedor-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: transferencia-service-docs
+          uri: http://localhost:8091
+          predicates: [Path=/transferencia-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: descuento-service-docs
+          uri: http://localhost:8092
+          predicates: [Path=/descuento-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+        - id: notificacion-service-docs
+          uri: http://localhost:8093
+          predicates: [Path=/notificacion-service/v3/api-docs]
+          filters: [SetPath=/v3/api-docs]
+
+# ─── Swagger UI agregado: una sola URL con el desplegable de todos los servicios ───
+# Disponible en: http://localhost:8080/swagger-ui.html
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    use-root-path: true
+    urls-primary-name: usuario-service
+    urls:
+      - name: usuario-service
+        url: /usuario-service/v3/api-docs
+      - name: resena-service
+        url: /resena-service/v3/api-docs
+      - name: devolucion-service
+        url: /devolucion-service/v3/api-docs
+      - name: producto-service
+        url: /producto-service/v3/api-docs
+      - name: inventario-service
+        url: /inventario-service/v3/api-docs
+      - name: venta-service
+        url: /venta-service/v3/api-docs
+      - name: pedido-service
+        url: /pedido-service/v3/api-docs
+      - name: despacho-service
+        url: /despacho-service/v3/api-docs
+      - name: sucursal-service
+        url: /sucursal-service/v3/api-docs
+      - name: proveedor-service
+        url: /proveedor-service/v3/api-docs
+      - name: transferencia-service
+        url: /transferencia-service/v3/api-docs
+      - name: descuento-service
+        url: /descuento-service/v3/api-docs
+      - name: notificacion-service
+        url: /notificacion-service/v3/api-docs

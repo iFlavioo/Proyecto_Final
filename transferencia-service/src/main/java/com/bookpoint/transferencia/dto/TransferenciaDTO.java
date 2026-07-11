@@ -8,26 +8,27 @@ import com.bookpoint.transferencia.model.Transferencia;
 public class TransferenciaDTO {
     private Long id;
 
-    @NotNull(message = "El productoId es obligatorio")
+    @NotNull(message = "El productoId no puede ser nulo ni vacio")
     @Positive(message = "El productoId debe ser mayor a cero")
     private Long productoId;
 
-    @NotNull(message = "La sucursal de origen es obligatoria")
+    @NotNull(message = "La sucursal de origen no puede ser nula ni vacia")
     @Positive(message = "El sucursalOrigenId debe ser mayor a cero")
     private Long sucursalOrigenId;
 
-    @NotNull(message = "La sucursal de destino es obligatoria")
+    @NotNull(message = "La sucursal de destino no puede ser nula ni vacia")
     @Positive(message = "El sucursalDestinoId debe ser mayor a cero")
     private Long sucursalDestinoId;
 
     @Min(value = 1, message = "La cantidad minima a transferir es 1")
     private int cantidad;
 
+    @NotBlank(message = "El estado no puede ser nulo ni vacio")
     @Pattern(regexp = "PENDIENTE|APROBADA|RECHAZADA",
              message = "Estado invalido. Use: PENDIENTE, APROBADA o RECHAZADA")
     private String estado;
 
-    @NotNull(message = "La fecha de transferencia es obligatoria")
+    @NotNull(message = "La fecha de transferencia no puede ser nula ni vacia")
     @PastOrPresent(message = "La fecha no puede ser futura")
     private LocalDate fechaTransferencia;
 

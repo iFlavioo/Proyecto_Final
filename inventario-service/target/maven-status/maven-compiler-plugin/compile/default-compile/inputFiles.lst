@@ -1,0 +1,9 @@
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\config\AppConfig.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\controller\InventarioController.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\dto\DescontarStockDTO.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\dto\InventarioDTO.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\exception\GlobalExceptionHandler.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\InventarioServiceApplication.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\model\Inventario.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\repository\InventarioRepository.java
+C:\Users\vales\book-point-final-y-completo\inventario-service\src\main\java\com\bookpoint\inventario\service\InventarioService.java

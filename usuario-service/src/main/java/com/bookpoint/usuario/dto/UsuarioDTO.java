@@ -7,19 +7,19 @@ import com.bookpoint.usuario.model.Usuario;
 public class UsuarioDTO {
     private Long id;
 
-    @NotBlank(message = "El nombre es obligatorio")
+    @NotBlank(message = "El nombre no puede ser nulo ni vacio")
     @Size(min = 2, max = 100, message = "El nombre debe tener entre 2 y 100 caracteres")
     private String nombre;
 
-    @NotBlank(message = "El email es obligatorio")
+    @NotBlank(message = "El email no puede ser nulo ni vacio")
     @Email(message = "El email no tiene un formato valido")
     private String email;
 
-    @NotBlank(message = "La password es obligatoria")
+    @NotBlank(message = "La password no puede ser nula ni vacia")
     @Size(min = 4, message = "La password debe tener al menos 4 caracteres")
     private String password;
 
-    @NotBlank(message = "El rol es obligatorio")
+    @NotBlank(message = "El rol no puede ser nulo ni vacio")
     @Pattern(regexp = "ADMIN|CLIENTE|VENDEDOR|LOGISTICA|BODEGA",
              message = "Rol invalido. Use: ADMIN, CLIENTE, VENDEDOR, LOGISTICA o BODEGA")
     private String rol;
