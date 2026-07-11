@@ -1,0 +1,6 @@
+com\bookpoint\pedido\config\AppConfigTest.class
+com\bookpoint\pedido\service\PedidoServiceTest.class
+com\bookpoint\pedido\controller\PedidoControllerIT.class
+com\bookpoint\pedido\controller\PedidoControllerTest.class
+com\bookpoint\pedido\PedidoServiceApplicationTests.class
+com\bookpoint\pedido\exception\GlobalExceptionHandlerTest.class

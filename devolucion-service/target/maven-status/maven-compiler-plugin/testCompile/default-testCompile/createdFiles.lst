@@ -1,0 +1,6 @@
+com\bookpoint\devolucion\config\AppConfigTest.class
+com\bookpoint\devolucion\controller\DevolucionControllerIT.class
+com\bookpoint\devolucion\DevolucionServiceApplicationTests.class
+com\bookpoint\devolucion\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\devolucion\controller\DevolucionControllerTest.class
+com\bookpoint\devolucion\service\DevolucionServiceTest.class

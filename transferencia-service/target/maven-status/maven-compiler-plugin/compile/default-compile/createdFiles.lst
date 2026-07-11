@@ -1,0 +1,8 @@
+com\bookpoint\transferencia\dto\TransferenciaDTO.class
+com\bookpoint\transferencia\TransferenciaServiceApplication.class
+com\bookpoint\transferencia\repository\TransferenciaRepository.class
+com\bookpoint\transferencia\controller\TransferenciaController.class
+com\bookpoint\transferencia\exception\GlobalExceptionHandler.class
+com\bookpoint\transferencia\model\Transferencia.class
+com\bookpoint\transferencia\service\TransferenciaService.class
+com\bookpoint\transferencia\config\AppConfig.class

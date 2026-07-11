@@ -84,4 +84,22 @@ public class ProveedorServiceTest {
         proveedorService.eliminarProveedor(1L);
         verify(proveedorRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaProveedorConNombreNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Proveedor p = new Proveedor(null, invalido, "contacto@planeta.cl", "223456789", "Planeta", true);
+            assertThrows(IllegalArgumentException.class, () -> proveedorService.guardarProveedor(p));
+        }
+        verify(proveedorRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaProveedorConEmailSinArroba() {
+        Proveedor p = new Proveedor(null, "Editorial Planeta", "contactoplaneta.cl", "223456789", "Planeta", true);
+        assertThrows(IllegalArgumentException.class, () -> proveedorService.guardarProveedor(p));
+        verify(proveedorRepository, never()).save(any());
+    }
 }

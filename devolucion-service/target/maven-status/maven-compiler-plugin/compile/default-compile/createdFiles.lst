@@ -1,0 +1,8 @@
+com\bookpoint\devolucion\dto\DevolucionDTO.class
+com\bookpoint\devolucion\exception\GlobalExceptionHandler.class
+com\bookpoint\devolucion\model\Devolucion.class
+com\bookpoint\devolucion\service\DevolucionService.class
+com\bookpoint\devolucion\repository\DevolucionRepository.class
+com\bookpoint\devolucion\config\AppConfig.class
+com\bookpoint\devolucion\controller\DevolucionController.class
+com\bookpoint\devolucion\DevolucionServiceApplication.class

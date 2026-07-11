@@ -1,0 +1,5 @@
+com\bookpoint\descuento\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\descuento\controller\DescuentoControllerTest.class
+com\bookpoint\descuento\controller\DescuentoControllerIT.class
+com\bookpoint\descuento\service\DescuentoServiceTest.class
+com\bookpoint\descuento\DescuentoServiceApplicationTests.class

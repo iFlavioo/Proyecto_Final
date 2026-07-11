@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bookpoint.transferencia.controller.TransferenciaControllerIT
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.963 s -- in com.bookpoint.transferencia.controller.TransferenciaControllerIT
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.592 s -- in com.bookpoint.transferencia.controller.TransferenciaControllerIT

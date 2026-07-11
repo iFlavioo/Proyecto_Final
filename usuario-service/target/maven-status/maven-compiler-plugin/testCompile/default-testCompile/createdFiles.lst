@@ -1,0 +1,5 @@
+com\bookpoint\usuario\service\UsuarioServiceTest.class
+com\bookpoint\usuario\UsuarioServiceApplicationTests.class
+com\bookpoint\usuario\controller\UsuarioControllerTest.class
+com\bookpoint\usuario\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\usuario\controller\UsuarioControllerIT.class

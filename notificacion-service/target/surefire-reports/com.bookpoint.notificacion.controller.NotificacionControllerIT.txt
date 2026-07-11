@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bookpoint.notificacion.controller.NotificacionControllerIT
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.234 s -- in com.bookpoint.notificacion.controller.NotificacionControllerIT
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.918 s -- in com.bookpoint.notificacion.controller.NotificacionControllerIT

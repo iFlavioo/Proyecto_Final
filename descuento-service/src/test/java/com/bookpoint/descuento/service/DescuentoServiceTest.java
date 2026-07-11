@@ -84,4 +84,22 @@ public class DescuentoServiceTest {
         descuentoService.eliminarDescuento(1L);
         verify(descuentoRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaDescuentoConCodigoNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Descuento d = new Descuento(null, invalido, "Descuento verano", 10.0, "CUPON", true, java.time.LocalDate.now().plusDays(30));
+            assertThrows(IllegalArgumentException.class, () -> descuentoService.guardarDescuento(d));
+        }
+        verify(descuentoRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaDescuentoConTipoInvalido() {
+        Descuento d = new Descuento(null, "CUPON01", "Descuento verano", 10.0, "OTRO", true, java.time.LocalDate.now().plusDays(30));
+        assertThrows(IllegalArgumentException.class, () -> descuentoService.guardarDescuento(d));
+        verify(descuentoRepository, never()).save(any());
+    }
 }

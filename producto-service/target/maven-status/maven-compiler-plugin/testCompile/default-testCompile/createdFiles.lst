@@ -1,0 +1,5 @@
+com\bookpoint\producto\service\ProductoServiceTest.class
+com\bookpoint\producto\ProductoServiceApplicationTests.class
+com\bookpoint\producto\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\producto\controller\ProductoControllerTest.class
+com\bookpoint\producto\controller\ProductoControllerIT.class

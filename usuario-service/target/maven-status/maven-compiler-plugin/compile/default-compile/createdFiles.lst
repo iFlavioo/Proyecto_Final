@@ -1,0 +1,7 @@
+com\bookpoint\usuario\dto\UsuarioDTO.class
+com\bookpoint\usuario\exception\GlobalExceptionHandler.class
+com\bookpoint\usuario\model\Usuario.class
+com\bookpoint\usuario\repository\UsuarioRepository.class
+com\bookpoint\usuario\controller\UsuarioController.class
+com\bookpoint\usuario\service\UsuarioService.class
+com\bookpoint\usuario\UsuarioServiceApplication.class

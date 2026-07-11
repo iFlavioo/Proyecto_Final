@@ -1,0 +1,6 @@
+com\bookpoint\notificacion\controller\NotificacionControllerIT.class
+com\bookpoint\notificacion\service\NotificacionServiceTest.class
+com\bookpoint\notificacion\NotificacionServiceApplicationTests.class
+com\bookpoint\notificacion\config\AppConfigTest.class
+com\bookpoint\notificacion\controller\NotificacionControllerTest.class
+com\bookpoint\notificacion\exception\GlobalExceptionHandlerTest.class

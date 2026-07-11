@@ -1,0 +1,8 @@
+com\bookpoint\despacho\controller\DespachoController.class
+com\bookpoint\despacho\repository\DespachoRepository.class
+com\bookpoint\despacho\service\DespachoService.class
+com\bookpoint\despacho\model\Despacho.class
+com\bookpoint\despacho\DespachoServiceApplication.class
+com\bookpoint\despacho\exception\GlobalExceptionHandler.class
+com\bookpoint\despacho\config\AppConfig.class
+com\bookpoint\despacho\dto\DespachoDTO.class

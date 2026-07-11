@@ -84,4 +84,47 @@ public class UsuarioServiceTest {
         usuarioService.eliminarUsuario(1L);
         verify(usuarioRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaUsuarioConNombreNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Usuario u = new Usuario(null, invalido, "juan@bookpoint.cl", "pass1234", "CLIENTE");
+            assertThrows(IllegalArgumentException.class, () -> usuarioService.guardarUsuario(u));
+        }
+        verify(usuarioRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaUsuarioConEmailNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Usuario u = new Usuario(null, "Juan Perez", invalido, "pass1234", "CLIENTE");
+            assertThrows(IllegalArgumentException.class, () -> usuarioService.guardarUsuario(u));
+        }
+        verify(usuarioRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaUsuarioConEmailSinArroba() {
+        Usuario u = new Usuario(null, "Juan Perez", "juanbookpoint.cl", "pass1234", "CLIENTE");
+        assertThrows(IllegalArgumentException.class, () -> usuarioService.guardarUsuario(u));
+        verify(usuarioRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaUsuarioConPasswordNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Usuario u = new Usuario(null, "Juan Perez", "juan@bookpoint.cl", invalido, "CLIENTE");
+            assertThrows(IllegalArgumentException.class, () -> usuarioService.guardarUsuario(u));
+        }
+        verify(usuarioRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaUsuarioConRolInvalido() {
+        Usuario u = new Usuario(null, "Juan Perez", "juan@bookpoint.cl", "pass1234", "SUPERADMIN");
+        assertThrows(IllegalArgumentException.class, () -> usuarioService.guardarUsuario(u));
+        verify(usuarioRepository, never()).save(any());
+    }
 }

@@ -129,4 +129,15 @@ public class ResenaServiceTest {
         resenaService.eliminarResena(1L);
         verify(resenaRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaResenaConComentarioNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Resena r = new Resena(null, 1L, 1L, invalido, 4, java.time.LocalDate.now());
+            assertThrows(IllegalArgumentException.class, () -> resenaService.guardarResena(r));
+        }
+        verify(resenaRepository, never()).save(any());
+    }
 }

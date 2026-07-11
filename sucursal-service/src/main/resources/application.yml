@@ -11,8 +11,10 @@ server:
   port: 8089
 
 springdoc:
+  api-docs:
+    path: /api/v1/sucursales/v3/api-docs
   swagger-ui:
-    path: /doc/swagger-ui.html
+    path: /api/v1/sucursales/swagger-ui.html
 
 ---
 # ── Perfil: dev (desarrollo local con XAMPP/MySQL) ─────────────────────────

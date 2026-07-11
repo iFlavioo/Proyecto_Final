@@ -1,6 +1,8 @@
 package com.bookpoint.resena.service;
 import java.util.List;
 import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +13,17 @@ import com.bookpoint.resena.repository.ResenaRepository;
 
 @Service
 public class ResenaService {
+    private static final Logger log = LoggerFactory.getLogger(ResenaService.class);
+
     @Autowired private ResenaRepository resenaRepository;
     @Autowired private RestTemplate restTemplate;
+
+    private void validarResena(Resena resena) {
+        if (resena.getComentario() == null || resena.getComentario().trim().isEmpty()) {
+            log.error("comentario no válido: no puede estar vacío ni en blanco");
+            throw new IllegalArgumentException("El comentario no puede estar vacío ni en blanco");
+        }
+    }
 
     @Value("${services.usuario-service.url:http://localhost:8081}")
     private String usuarioUrl;
@@ -29,6 +40,7 @@ public class ResenaService {
     }
 
     public Resena guardarResena(Resena resena) {
+        validarResena(resena);
         if (!existe(usuarioUrl + "/api/v1/usuarios/" + resena.getUsuarioId())) {
             throw new RuntimeException("No existe usuario con id: " + resena.getUsuarioId());
         }
@@ -43,6 +55,7 @@ public class ResenaService {
     public Optional<Resena> obtenerResenaPorId(Long id) { return resenaRepository.findById(id); }
 
     public Resena actualizarResena(Long id, Resena resena) {
+        validarResena(resena);
         Resena existente = resenaRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("No existe resena con id: " + id));
         if (!existe(usuarioUrl + "/api/v1/usuarios/" + resena.getUsuarioId())) {

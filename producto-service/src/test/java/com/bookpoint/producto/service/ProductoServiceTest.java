@@ -84,4 +84,24 @@ public class ProductoServiceTest {
         productoService.eliminarProducto(1L);
         verify(productoRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaProductoConNombreNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Producto p = new Producto(null, invalido, "Novela", 15990.0, "Literatura", "Garcia Marquez", "Sudamericana");
+            assertThrows(IllegalArgumentException.class, () -> productoService.guardarProducto(p));
+        }
+        verify(productoRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaProductoConCategoriaNulaVaciaOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Producto p = new Producto(null, "Cien Anios de Soledad", "Novela", 15990.0, invalido, "Garcia Marquez", "Sudamericana");
+            assertThrows(IllegalArgumentException.class, () -> productoService.guardarProducto(p));
+        }
+        verify(productoRepository, never()).save(any());
+    }
 }

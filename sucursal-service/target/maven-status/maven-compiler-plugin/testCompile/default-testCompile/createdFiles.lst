@@ -1,0 +1,5 @@
+com\bookpoint\sucursal\service\SucursalServiceTest.class
+com\bookpoint\sucursal\controller\SucursalControllerIT.class
+com\bookpoint\sucursal\controller\SucursalControllerTest.class
+com\bookpoint\sucursal\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\sucursal\SucursalServiceApplicationTests.class

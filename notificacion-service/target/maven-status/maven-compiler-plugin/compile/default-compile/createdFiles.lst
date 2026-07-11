@@ -1,0 +1,8 @@
+com\bookpoint\notificacion\NotificacionServiceApplication.class
+com\bookpoint\notificacion\exception\GlobalExceptionHandler.class
+com\bookpoint\notificacion\repository\NotificacionRepository.class
+com\bookpoint\notificacion\config\AppConfig.class
+com\bookpoint\notificacion\dto\NotificacionDTO.class
+com\bookpoint\notificacion\service\NotificacionService.class
+com\bookpoint\notificacion\controller\NotificacionController.class
+com\bookpoint\notificacion\model\Notificacion.class

@@ -1,0 +1,8 @@
+com\bookpoint\resena\dto\ResenaDTO.class
+com\bookpoint\resena\exception\GlobalExceptionHandler.class
+com\bookpoint\resena\model\Resena.class
+com\bookpoint\resena\config\AppConfig.class
+com\bookpoint\resena\controller\ResenaController.class
+com\bookpoint\resena\ResenaServiceApplication.class
+com\bookpoint\resena\repository\ResenaRepository.class
+com\bookpoint\resena\service\ResenaService.class

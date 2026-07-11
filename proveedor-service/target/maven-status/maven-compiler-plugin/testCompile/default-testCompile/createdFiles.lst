@@ -1,0 +1,5 @@
+com\bookpoint\proveedor\controller\ProveedorControllerTest.class
+com\bookpoint\proveedor\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\proveedor\controller\ProveedorControllerIT.class
+com\bookpoint\proveedor\service\ProveedorServiceTest.class
+com\bookpoint\proveedor\ProveedorServiceApplicationTests.class

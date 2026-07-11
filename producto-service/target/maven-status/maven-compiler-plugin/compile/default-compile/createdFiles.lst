@@ -1,0 +1,7 @@
+com\bookpoint\producto\model\Producto.class
+com\bookpoint\producto\dto\ProductoDTO.class
+com\bookpoint\producto\service\ProductoService.class
+com\bookpoint\producto\exception\GlobalExceptionHandler.class
+com\bookpoint\producto\controller\ProductoController.class
+com\bookpoint\producto\ProductoServiceApplication.class
+com\bookpoint\producto\repository\ProductoRepository.class

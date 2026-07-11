@@ -129,4 +129,22 @@ public class DespachoServiceTest {
         despachoService.eliminarDespacho(1L);
         verify(despachoRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaDespachoConDireccionDestinoNulaVaciaOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Despacho d = new Despacho(null, 1L, 1L, "PREPARANDO", java.time.LocalDate.now(), invalido);
+            assertThrows(IllegalArgumentException.class, () -> despachoService.guardarDespacho(d));
+        }
+        verify(despachoRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaDespachoConEstadoInvalido() {
+        Despacho d = new Despacho(null, 1L, 1L, "VOLANDO", java.time.LocalDate.now(), "Av Siempre Viva 742");
+        assertThrows(IllegalArgumentException.class, () -> despachoService.guardarDespacho(d));
+        verify(despachoRepository, never()).save(any());
+    }
 }

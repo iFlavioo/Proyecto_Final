@@ -1,0 +1,6 @@
+com\bookpoint\resena\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\resena\config\AppConfigTest.class
+com\bookpoint\resena\controller\ResenaControllerIT.class
+com\bookpoint\resena\ResenaServiceApplicationTests.class
+com\bookpoint\resena\service\ResenaServiceTest.class
+com\bookpoint\resena\controller\ResenaControllerTest.class

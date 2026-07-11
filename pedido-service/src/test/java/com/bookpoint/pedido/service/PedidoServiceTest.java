@@ -129,4 +129,31 @@ public class PedidoServiceTest {
         pedidoService.eliminarPedido(1L);
         verify(pedidoRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaPedidoConEstadoNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Pedido p = new Pedido(null, 1L, 1L, 2, invalido, java.time.LocalDate.now(), "Av Siempre Viva 742");
+            assertThrows(IllegalArgumentException.class, () -> pedidoService.guardarPedido(p));
+        }
+        verify(pedidoRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaPedidoConEstadoInvalido() {
+        Pedido p = new Pedido(null, 1L, 1L, 2, "VOLANDO", java.time.LocalDate.now(), "Av Siempre Viva 742");
+        assertThrows(IllegalArgumentException.class, () -> pedidoService.guardarPedido(p));
+        verify(pedidoRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaPedidoConDireccionEntregaNulaVaciaOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Pedido p = new Pedido(null, 1L, 1L, 2, "PENDIENTE", java.time.LocalDate.now(), invalido);
+            assertThrows(IllegalArgumentException.class, () -> pedidoService.guardarPedido(p));
+        }
+        verify(pedidoRepository, never()).save(any());
+    }
 }

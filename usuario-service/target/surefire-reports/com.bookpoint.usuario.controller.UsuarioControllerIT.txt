@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bookpoint.usuario.controller.UsuarioControllerIT
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.437 s -- in com.bookpoint.usuario.controller.UsuarioControllerIT
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.773 s -- in com.bookpoint.usuario.controller.UsuarioControllerIT

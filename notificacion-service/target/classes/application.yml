@@ -11,8 +11,10 @@ server:
   port: 8093
 
 springdoc:
+  api-docs:
+    path: /api/v1/notificaciones/v3/api-docs
   swagger-ui:
-    path: /doc/swagger-ui.html
+    path: /api/v1/notificaciones/swagger-ui.html
 
 services:
   usuario-service:

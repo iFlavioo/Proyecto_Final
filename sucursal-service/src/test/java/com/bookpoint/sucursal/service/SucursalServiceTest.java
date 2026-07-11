@@ -84,4 +84,47 @@ public class SucursalServiceTest {
         sucursalService.eliminarSucursal(1L);
         verify(sucursalRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaSucursalConNombreNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Sucursal s = new Sucursal(null, invalido, "Barros Arana 123", "Concepcion", "412345678", "9:00-18:00");
+            assertThrows(IllegalArgumentException.class, () -> sucursalService.guardarSucursal(s));
+        }
+        verify(sucursalRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaSucursalConDireccionNulaVaciaOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Sucursal s = new Sucursal(null, "BookPoint Concepcion", invalido, "Concepcion", "412345678", "9:00-18:00");
+            assertThrows(IllegalArgumentException.class, () -> sucursalService.guardarSucursal(s));
+        }
+        verify(sucursalRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaSucursalConCiudadNulaVaciaOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Sucursal s = new Sucursal(null, "BookPoint Concepcion", "Barros Arana 123", invalido, "412345678", "9:00-18:00");
+            assertThrows(IllegalArgumentException.class, () -> sucursalService.guardarSucursal(s));
+        }
+        verify(sucursalRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaSucursalConCiudadInvalida() {
+        Sucursal s = new Sucursal(null, "BookPoint Santiago", "Alameda 100", "Santiago", "412345678", "9:00-18:00");
+        assertThrows(IllegalArgumentException.class, () -> sucursalService.guardarSucursal(s));
+        verify(sucursalRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaSucursalConTelefonoInvalido() {
+        Sucursal s = new Sucursal(null, "BookPoint Concepcion", "Barros Arana 123", "Concepcion", "123", "9:00-18:00");
+        assertThrows(IllegalArgumentException.class, () -> sucursalService.guardarSucursal(s));
+        verify(sucursalRepository, never()).save(any());
+    }
 }

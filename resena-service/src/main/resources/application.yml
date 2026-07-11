@@ -11,8 +11,10 @@ server:
   port: 8082
 
 springdoc:
+  api-docs:
+    path: /api/v1/resenas/v3/api-docs
   swagger-ui:
-    path: /doc/swagger-ui.html
+    path: /api/v1/resenas/swagger-ui.html
 
 services:
   usuario-service:

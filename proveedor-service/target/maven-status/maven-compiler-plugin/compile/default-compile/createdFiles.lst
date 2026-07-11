@@ -1,0 +1,7 @@
+com\bookpoint\proveedor\model\Proveedor.class
+com\bookpoint\proveedor\repository\ProveedorRepository.class
+com\bookpoint\proveedor\service\ProveedorService.class
+com\bookpoint\proveedor\dto\ProveedorDTO.class
+com\bookpoint\proveedor\controller\ProveedorController.class
+com\bookpoint\proveedor\exception\GlobalExceptionHandler.class
+com\bookpoint\proveedor\ProveedorServiceApplication.class

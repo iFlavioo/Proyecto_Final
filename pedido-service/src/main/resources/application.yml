@@ -11,8 +11,10 @@ server:
   port: 8087
 
 springdoc:
+  api-docs:
+    path: /api/v1/pedidos/v3/api-docs
   swagger-ui:
-    path: /doc/swagger-ui.html
+    path: /api/v1/pedidos/swagger-ui.html
 
 services:
   usuario-service:

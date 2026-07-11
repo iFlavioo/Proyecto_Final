@@ -118,4 +118,15 @@ public class NotificacionServiceTest {
         notificacionService.eliminarNotificacion(1L);
         verify(notificacionRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaNotificacionConMensajeNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Notificacion n = new Notificacion(null, 1L, invalido, "PEDIDO", false, java.time.LocalDate.now());
+            assertThrows(IllegalArgumentException.class, () -> notificacionService.guardarNotificacion(n));
+        }
+        verify(notificacionRepository, never()).save(any());
+    }
 }

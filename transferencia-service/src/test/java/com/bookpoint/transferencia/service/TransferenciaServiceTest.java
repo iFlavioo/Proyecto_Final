@@ -129,4 +129,13 @@ public class TransferenciaServiceTest {
         transferenciaService.eliminarTransferencia(1L);
         verify(transferenciaRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaTransferenciaConEstadoInvalido() {
+        Transferencia t = new Transferencia(null, 1L, 1L, 2L, 5, "OTRO", java.time.LocalDate.now());
+        assertThrows(IllegalArgumentException.class, () -> transferenciaService.guardarTransferencia(t));
+        verify(transferenciaRepository, never()).save(any());
+    }
 }

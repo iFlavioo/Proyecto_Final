@@ -1,0 +1,7 @@
+com\bookpoint\descuento\controller\DescuentoController.class
+com\bookpoint\descuento\service\DescuentoService.class
+com\bookpoint\descuento\exception\GlobalExceptionHandler.class
+com\bookpoint\descuento\model\Descuento.class
+com\bookpoint\descuento\dto\DescuentoDTO.class
+com\bookpoint\descuento\DescuentoServiceApplication.class
+com\bookpoint\descuento\repository\DescuentoRepository.class

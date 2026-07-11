@@ -129,4 +129,31 @@ public class DevolucionServiceTest {
         devolucionService.eliminarDevolucion(1L);
         verify(devolucionRepository).deleteById(1L);
     }
+
+    // ─── Validacion: los datos no pueden estar nulos, vacios ni en blanco ──────
+
+    @Test
+    void testNoGuardaDevolucionConMotivoNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Devolucion d = new Devolucion(null, 1L, 1L, invalido, "PENDIENTE", java.time.LocalDate.now());
+            assertThrows(IllegalArgumentException.class, () -> devolucionService.guardarDevolucion(d));
+        }
+        verify(devolucionRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaDevolucionConEstadoNuloVacioOEnBlanco() {
+        for (String invalido : new String[]{null, "", "   "}) {
+            Devolucion d = new Devolucion(null, 1L, 1L, "Producto llego defectuoso", invalido, java.time.LocalDate.now());
+            assertThrows(IllegalArgumentException.class, () -> devolucionService.guardarDevolucion(d));
+        }
+        verify(devolucionRepository, never()).save(any());
+    }
+
+    @Test
+    void testNoGuardaDevolucionConEstadoInvalido() {
+        Devolucion d = new Devolucion(null, 1L, 1L, "Producto llego defectuoso", "OTRO", java.time.LocalDate.now());
+        assertThrows(IllegalArgumentException.class, () -> devolucionService.guardarDevolucion(d));
+        verify(devolucionRepository, never()).save(any());
+    }
 }

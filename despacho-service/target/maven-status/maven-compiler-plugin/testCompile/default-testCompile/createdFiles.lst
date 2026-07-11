@@ -1,0 +1,6 @@
+com\bookpoint\despacho\DespachoServiceApplicationTests.class
+com\bookpoint\despacho\config\AppConfigTest.class
+com\bookpoint\despacho\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\despacho\controller\DespachoControllerTest.class
+com\bookpoint\despacho\service\DespachoServiceTest.class
+com\bookpoint\despacho\controller\DespachoControllerIT.class

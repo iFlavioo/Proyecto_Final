@@ -1,0 +1,6 @@
+com\bookpoint\transferencia\controller\TransferenciaControllerIT.class
+com\bookpoint\transferencia\TransferenciaServiceApplicationTests.class
+com\bookpoint\transferencia\exception\GlobalExceptionHandlerTest.class
+com\bookpoint\transferencia\config\AppConfigTest.class
+com\bookpoint\transferencia\controller\TransferenciaControllerTest.class
+com\bookpoint\transferencia\service\TransferenciaServiceTest.class
